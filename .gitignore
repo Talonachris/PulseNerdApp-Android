@@ -1,0 +1,61 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Trash
+.Trashes
+*.swp
+*.lock
+Icon?
+
+# macOS Folder attributes
+._*
+
+# Android Studio
+.idea/
+*.iml
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration
+local.properties
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+
+# Log/temporary files
+*.log
+*.tmp
+*.temp
+
+# Keystore files (optional – falls du sie im Projekt behalten willst, entferne diese Zeile)
+*.jks
+*.keystore
+
+# Kotlin/Java build
+*.class
+
+# Proguard
+proguard/
+
+# Jetpack Compose preview cache
+.ui/
+
+# Other
+*.apk
+*.ap_
+
+# Google Services (falls verwendet)
+google-services.json
+
+# Fastlane (falls du es später verwendest)
+fastlane/report.xml
+fastlane/screenshots
+fastlane/metadata
+fastlane/credentials.json
