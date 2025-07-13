@@ -60,3 +60,6 @@ fastlane/screenshots
 fastlane/metadata
 fastlane/credentials.json
 *.hprof
+
+# Ignore all build folders
+**/build/
