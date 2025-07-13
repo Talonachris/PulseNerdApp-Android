@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Computer
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -23,6 +24,17 @@ fun MainScreen() {
         topBar = {
             TopAppBar(
                 title = { Text("PulseNerd", color = Color.White) },
+                actions = {
+                    IconButton(onClick = {
+                        navController.navigate("settings")
+                    }) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "Settings",
+                            tint = Color.White
+                        )
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFF0A1423),
                     titleContentColor = Color.White
@@ -83,6 +95,9 @@ fun MainScreen() {
         ) {
             composable("home") { HomeView() }
             composable("geek") { GeekView() }
+            composable("settings") {
+                SettingsView(onBack = { navController.popBackStack() })
+            }
         }
     }
 }

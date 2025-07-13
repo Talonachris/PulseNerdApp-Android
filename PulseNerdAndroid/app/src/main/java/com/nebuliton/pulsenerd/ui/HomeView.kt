@@ -12,7 +12,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bolt
 import androidx.compose.material.icons.filled.Cable
 import androidx.compose.material.icons.filled.Code
-import androidx.compose.material.icons.filled.Computer
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.QueryStats
 import androidx.compose.material.icons.filled.ScreenRotation
@@ -32,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nebuliton.pulsenerd.R
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView() {
     Box(
@@ -42,14 +42,11 @@ fun HomeView() {
                     listOf(Color(0xFF050A12), Color(0xFF00121F))
                 )
             )
+            .padding(0.dp)
+            .verticalScroll(rememberScrollState()),
+        contentAlignment = Alignment.TopCenter
     ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(24.dp)
-                .verticalScroll(rememberScrollState()),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Spacer(modifier = Modifier.height(16.dp))
 
             Box(contentAlignment = Alignment.Center) {
@@ -80,7 +77,12 @@ fun HomeView() {
 
             Spacer(modifier = Modifier.height(20.dp))
             Text("Welcome to", fontSize = 18.sp, color = Color.Cyan)
-            Text("PulseNerd", fontSize = 32.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(
+                "PulseNerd",
+                fontSize = 32.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 "Live view for your WhatPulse stats – optimized for landscape.",
@@ -101,42 +103,50 @@ fun HomeView() {
                     .fillMaxWidth()
             )
 
-            Divider(color = Color.White.copy(alpha = 0.2f), thickness = 1.dp, modifier = Modifier.padding(vertical = 16.dp))
+            Divider(
+                color = Color.White.copy(alpha = 0.2f),
+                thickness = 1.dp,
+                modifier = Modifier.padding(vertical = 16.dp)
+            )
 
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 FeatureRow(
                     "Real-Time Charts",
                     "Clicks, keys and bandwidth – updated every second.",
-                    Icons.Filled.QueryStats // Analyse-Icon mit Linien
+                    Icons.Filled.QueryStats
                 )
                 FeatureRow(
                     "Pulse Button",
                     "Instantly trigger a new pulse right from the app.",
-                    Icons.Filled.Bolt // Blitzsymbol, modern
+                    Icons.Filled.Bolt
                 )
                 FeatureRow(
                     "Designed for Landscape",
                     "Perfect for desks, streamers and horizontal docks.",
-                    Icons.Filled.ScreenRotation // Landscape-Symbol
+                    Icons.Filled.ScreenRotation
                 )
                 FeatureRow(
                     "Runs Locally",
                     "Connects to the local WhatPulse client API.",
-                    Icons.Filled.Cable // Stecker-Symbol für lokale Verbindung
+                    Icons.Filled.Cable
                 )
                 FeatureRow(
                     "Modular Code",
                     "Jetpack Compose-based and iOS-ready.",
-                    Icons.Filled.Code // </> Code-Symbol
+                    Icons.Filled.Code
                 )
                 FeatureRow(
                     "Made with ❤️",
                     "A geek window for power users – from Nebuliton.",
-                    Icons.Filled.Favorite // Herzsymbol
+                    Icons.Filled.Favorite
                 )
             }
 
-            Divider(color = Color.White.copy(alpha = 0.1f), thickness = 1.dp, modifier = Modifier.padding(vertical = 16.dp))
+            Divider(
+                color = Color.White.copy(alpha = 0.1f),
+                thickness = 1.dp,
+                modifier = Modifier.padding(vertical = 16.dp)
+            )
 
             Text("🔗 Links", color = Color.Cyan, fontSize = 18.sp)
 
