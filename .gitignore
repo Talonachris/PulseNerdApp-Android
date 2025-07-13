@@ -63,3 +63,4 @@ fastlane/credentials.json
 
 # Ignore all build folders
 **/build/
+*.hprof
