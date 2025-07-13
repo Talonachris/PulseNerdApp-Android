@@ -59,3 +59,4 @@ fastlane/report.xml
 fastlane/screenshots
 fastlane/metadata
 fastlane/credentials.json
+*.hprof
