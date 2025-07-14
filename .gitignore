@@ -32,6 +32,7 @@ local.properties
 *.pem
 *.key
 *.p12
+keystore/
 
 # Proguard / R8
 proguard/
