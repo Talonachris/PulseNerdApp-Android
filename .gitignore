@@ -2,65 +2,90 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# macOS Trash
 .Trashes
-*.swp
-*.lock
 Icon?
-
-# macOS Folder attributes
 ._*
 
-# Android Studio
+# Swap / Lockfiles
+*.swp
+*.lock
+
+# Android Studio / IntelliJ
 .idea/
 *.iml
-.gradle/
-build/
-captures/
-.externalNativeBuild/
-.cxx/
-
-# Local configuration
-local.properties
+*.ipr
+*.iws
 
 # Gradle
 .gradle/
 build/
-!gradle-wrapper.jar
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
 
-# Log/temporary files
+# Local configuration
+local.properties
+*.local
+
+# Signing Keys (very important!)
+*.jks
+*.keystore
+*.pem
+*.key
+*.p12
+
+# Proguard / R8
+proguard/
+*.pro
+
+# Compiled Java / Kotlin classes
+*.class
+*.dex
+*.jar
+
+# Generated APKs/AABs
+*.apk
+*.ap_
+*.aab
+
+# Jetpack Compose / UI Previews
+.ui/
+
+# Crash/Heap dumps
+*.hprof
 *.log
 *.tmp
 *.temp
 
-# Keystore files (optional – falls du sie im Projekt behalten willst, entferne diese Zeile)
-*.jks
-*.keystore
+# Captures / Screenshots
+captures/
 
-# Kotlin/Java build
-*.class
+# CMake / NDK
+.externalNativeBuild/
+.cxx/
 
-# Proguard
-proguard/
-
-# Jetpack Compose preview cache
-.ui/
-
-# Other
-*.apk
-*.ap_
-
-# Google Services (falls verwendet)
+# Google Services config (Firebase etc.)
 google-services.json
+firebase-debug.log
 
-# Fastlane (falls du es später verwendest)
+# Fastlane (for Play Store uploads)
 fastlane/report.xml
-fastlane/screenshots
-fastlane/metadata
+fastlane/screenshots/
+fastlane/metadata/
 fastlane/credentials.json
-*.hprof
 
-# Ignore all build folders
-**/build/
-*.hprof
+# VSCode (falls du parallel nutzt)
+.vscode/
+
+# Backup files
+*.bak
+*.orig
+*.old
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Cache (z. B. Kotlin Daemon, Compose Preview, etc.)
+.kotlinc/
+.idea/.cache/
